@@ -2,9 +2,11 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-slider',
+  selector: 'app-not-found',
   imports: [RouterLink],
-  templateUrl: './slider.html',
-  styleUrl: './slider.css',
+  templateUrl: './not-found.html',
+  styleUrl: './not-found.css',
 })
-export class Slider {}
+export class NotFound {
+
+}

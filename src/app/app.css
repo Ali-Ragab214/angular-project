@@ -1,0 +1,26 @@
+/* ============================================
+   APP COMPONENT STYLES
+   ============================================ */
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+app-navbar {
+  flex-shrink: 0;
+}
+
+app-slider {
+  flex-shrink: 0;
+}
+
+app-cards {
+  flex: 1;
+}
+
+app-footer {
+  flex-shrink: 0;
+  margin-top: auto;
+}

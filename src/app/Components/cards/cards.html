@@ -1,85 +1,45 @@
-<div class="container mt-4">
-  <div class="row g-4">
-
-    <div class="col-md-3">
-      <div class="card h-100">
-        <img src="https://picsum.photos/300/200?random=1" class="card-img-top" alt="image">
-        <div class="card-body">
-          <h5 class="card-title">Card Title 1</h5>
-          <p class="card-text">Some quick example text.</p>
-        </div>
-      </div>
-    </div>
-     
-    <div class="col-md-3">
-      <div class="card h-100">
-        <img src="https://picsum.photos/300/200?random=2" class="card-img-top" alt="image">
-        <div class="card-body">
-          <h5 class="card-title">Card Title 2</h5>
-          <p class="card-text">Some quick example text.</p>
-        </div>
-      </div>
-    </div>
- 
-    <div class="col-md-3">
-      <div class="card h-100">
-        <img src="https://picsum.photos/300/200?random=3" class="card-img-top" alt="image">
-        <div class="card-body">
-          <h5 class="card-title">Card Title 3</h5>
-          <p class="card-text">Some quick example text.</p>
-        </div>
-      </div>
+<div class="cards-container">
+  <div class="container">
+    <div class="cards-header">
+      <h2>Products</h2>
+      <p>Discover our amazing collection of premium items</p>
     </div>
 
-    <div class="col-md-3">
-      <div class="card h-100">
-        <img src="https://picsum.photos/300/200?random=4" class="card-img-top" alt="image">
-        <div class="card-body">
-          <h5 class="card-title">Card Title 4</h5>
-          <p class="card-text">Some quick example text.</p>
+    <div class="row g-4">
+      @for (product of products; track product.name) {
+        <div class="col-lg-3 col-md-6">
+          <div class="card h-100">
+            <div class="card-img-wrapper">
+              <img [src]="product.image" class="card-img-top" [alt]="product.name">
+              <div class="card-img-overlay">
+                <span class="card-img-overlay-text">View Info</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">{{ product.name }}</h5>
+              <p class="card-text">High-quality item with exceptional features and durability.</p>
+              <p class="product-price">${{ product.price }}</p>
+              <p class="pieces-info" [class.out-of-stock]="product.pieces === 0">
+                📦 {{ product.pieces }} in stock
+              </p>
+              <div class="card-footer">
+                <button 
+                  class="btn btn-primary" 
+                  [disabled]="product.pieces===0"
+                  [class.btn-out-of-stock]="product.pieces===0"
+                  (click)="addToCart(product)">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-
-    <div class="col-md-3">
-      <div class="card h-100">
-        <img src="https://picsum.photos/300/200?random=5" class="card-img-top" alt="image">
-        <div class="card-body">
-          <h5 class="card-title">Card Title 5</h5>
-          <p class="card-text">Some quick example text.</p>
+      } @empty {
+        <div class="col-12">
+          <p class="text-center">No products available.</p>
         </div>
-      </div>
-    </div>
+      }
 
-    <div class="col-md-3">
-      <div class="card h-100">
-        <img src="https://picsum.photos/300/200?random=6" class="card-img-top" alt="image">
-        <div class="card-body">
-          <h5 class="card-title">Card Title 6</h5>
-          <p class="card-text">Some quick example text.</p>
-        </div>
-      </div>
     </div>
-
-    <div class="col-md-3">
-      <div class="card h-100">
-        <img src="https://picsum.photos/300/200?random=7" class="card-img-top" alt="image">
-        <div class="card-body">
-          <h5 class="card-title">Card Title 7</h5>
-          <p class="card-text">Some quick example text.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-3">
-      <div class="card h-100">
-        <img src="https://picsum.photos/300/200?random=8" class="card-img-top" alt="image">
-        <div class="card-body">
-          <h5 class="card-title">Card Title 8</h5>
-          <p class="card-text">Some quick example text.</p>
-        </div>
-      </div>
-    </div>
-
   </div>
 </div>

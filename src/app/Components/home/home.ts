@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-slider',
+  selector: 'app-home',
   imports: [RouterLink],
-  templateUrl: './slider.html',
-  styleUrl: './slider.css',
+  templateUrl: './home.html',
+  styleUrl: './home.css',
 })
-export class Slider {}
+export class Home {}
