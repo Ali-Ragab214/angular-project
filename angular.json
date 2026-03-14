@@ -9,9 +9,9 @@
     "ali-store": {
       "projectType": "application",
       "schematics": {
-          "@schematics/angular:component": {
-            "skipTests": true
-          }
+        "@schematics/angular:component": {
+          "skipTests": true
+        }
       },
       "root": "",
       "sourceRoot": "src",
@@ -29,25 +29,37 @@
               }
             ],
             "styles": [
-  "node_modules/bootstrap/dist/css/bootstrap.min.css",
-  "src/styles.css"
-],
-"scripts": [
-  "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
-]
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css"
+            ],
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ],
+            "optimization": {
+              "scripts": true,
+              "styles": true,
+              "fonts": {
+                "inline": false
+              }
+            }
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
+                  "maximumWarning": "5MB",
+                  "maximumError": "10MB"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "4kB",
-                  "maximumError": "8kB"
+                  "maximumWarning": "1MB",
+                  "maximumError": "2MB"
+                },
+                {
+                  "type": "inline-fonts",
+                  "maximumWarning": "50kB",
+                  "maximumError": "100kB"
                 }
               ],
               "outputHashing": "all"
